@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise', '~> 2.2.4'
+gem 'activeadmin', '~> 0.6.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

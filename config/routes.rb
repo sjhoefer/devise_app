@@ -1,5 +1,9 @@
 DeviseApp::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users, :path_names => { :sign_up => "registerdudes", :sign_in => "login" }
+  ActiveAdmin.routes(self)
 
   resources :projects
 
