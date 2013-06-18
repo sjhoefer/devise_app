@@ -9,6 +9,16 @@ ActiveAdmin.register_page "Dashboard" do
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
+    
+    section "Completed Products" do
+      table_for Project.order("complete").limit(5) do
+        column :name do |project|
+          link_to project.name, [:admin, project]
+        end
+        column :description
+      end
+      strong { link_to "View All Projects", admin_projects_path }
+    end
 
     # Here is an example of a simple dashboard with columns and panels.
     #
